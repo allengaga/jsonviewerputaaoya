@@ -1,9 +1,9 @@
 <!doctype HTML>
-<html>
+<html lang="pt-BR">
   <head>
-    <title>Formatador e Validador JSON</title>
-      <meta name="description" content="Formatador / Embelezador JSON e Validador JSON ONLINE irá formatar dados JSON e ajudar a validar.">
-  <meta name="keywords" content="Formatador JSON, Visualizador JSON, Embelezador JSON, Editor JSON">
+    <title>Ferramenta de Formatação JSON - Ferramenta Online Gratuita</title>
+      <meta name="description" content="A Ferramenta de Formatação JSON é uma ferramenta online gratuita que ajuda a formatar e validar dados JSON. Use nossa ferramenta para formatar e validar seus dados JSON.">
+  <meta name="keywords" content="Ferramenta de Formatação JSON, Ferramenta de Beleza JSON, Ferramenta de Validação JSON, Ferramenta Gratuita">
     <meta charset="utf-8" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="json-viewer/jquery.json-viewer.js"></script>
@@ -45,7 +45,7 @@ $(function() {
       var input = eval('(' + $('#json-input').val() + ')');
     }
     catch (error) {
-      return alert("Não é possível avaliar JSON: " + error);
+      return alert("Não é possível analisar os dados JSON: " + error);
     }
     var options = {
       collapsed: $('#collapsed').is(':checked'),
@@ -56,20 +56,20 @@ $(function() {
     $('#json-renderer').jsonViewer(input, options);
   }
 
-  // Gerar ao clicar
+  // Clique no botão para formatar
   $('#btn-json-viewer').click(renderJson);
 
-  // Gerar ao alterar a opção
+  // Alterar opções para formatar
   $('p.options input[type=checkbox]').click(renderJson);
 
-  // Exibir exemplo de JSON ao carregar a página
+  // Carregar dados JSON de exemplo
   renderJson();
 });
     </script>
     
   </head>
   <body>
-    <h1>Formatador JSON Online</h1>
+    <h1>Ferramenta de Formatação JSON - Ferramenta Online Gratuita</h1>
     <textarea id="json-input" autocomplete="off">
 {
   "id": 1001,
@@ -78,29 +78,29 @@ $(function() {
   "description": "https://www.google.com",
   "price": 2.15,
   "available": {
-    store: 42,
-    num: 100
+    "store": 42,
+    "num": 100
   }
 }</textarea>
     <p class="options">
       Opções:
-      <label title="Gerar nó como colapsado">
+      <label title="Colapsar nós">
         <input type="checkbox" id="collapsed">Colapsar nós
       </label>
-      <label title="Permitir que o elemento raiz seja colapsado">
-        <input type="checkbox" id="root-collapsable" checked>Elemento raiz colapsável
+      <label title="Permitir raiz colapsável">
+        <input type="checkbox" id="root-collapsable" checked>Raiz colapsável
       </label>
       <label title="Citar chaves">
         <input type="checkbox" id="with-quotes">Chaves com citações
       </label>
-      <label title="Gerar tags de âncora para valores de URL">
+      <label title="Gerar links para valores de URL">
         <input type="checkbox" id="with-links" checked>
         Com Links
       </label>
     </p>
-    <button id="btn-json-viewer" title="executar jsonViewer()">Formatar</button>
+    <button id="btn-json-viewer" title="Executar jsonViewer()">Formatar</button>
     <pre id="json-renderer"></pre>
-       <div style="text-align: center;">Direitos autorais © 2023 Json Tool</div>
+       <div style="text-align: center;">Direitos autorais © 2023 Ferramenta de JSON</div>
 
   </body>
 </html>
