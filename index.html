@@ -1,10 +1,9 @@
-
 <!doctype HTML>
 <html>
   <head>
-    <title>JSON Formatter & Validator</title>
-      <meta name="description" content="JSON Formatter / Beautifier and JSON Validator ONLINE will format JSON data, and helps to validate,">
-  <meta name="keywords" content="JSON Formatter , JSON Viewer, JSON Beautifier, JSON Editor">
+    <title>Formatador e Validador JSON</title>
+      <meta name="description" content="Formatador / Embelezador JSON e Validador JSON ONLINE irá formatar dados JSON e ajudar a validar.">
+  <meta name="keywords" content="Formatador JSON, Visualizador JSON, Embelezador JSON, Editor JSON">
     <meta charset="utf-8" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="json-viewer/jquery.json-viewer.js"></script>
@@ -46,7 +45,7 @@ $(function() {
       var input = eval('(' + $('#json-input').val() + ')');
     }
     catch (error) {
-      return alert("Cannot eval JSON: " + error);
+      return alert("Não é possível avaliar JSON: " + error);
     }
     var options = {
       collapsed: $('#collapsed').is(':checked'),
@@ -57,25 +56,25 @@ $(function() {
     $('#json-renderer').jsonViewer(input, options);
   }
 
-  // Generate on click
+  // Gerar ao clicar
   $('#btn-json-viewer').click(renderJson);
 
-  // Generate on option change
+  // Gerar ao alterar a opção
   $('p.options input[type=checkbox]').click(renderJson);
 
-  // Display JSON sample on page load
+  // Exibir exemplo de JSON ao carregar a página
   renderJson();
 });
     </script>
     
   </head>
   <body>
-    <h1>JSON Formatter Online</h1>
+    <h1>Formatador JSON Online</h1>
     <textarea id="json-input" autocomplete="off">
 {
   "id": 1001,
   "type": "goods",
-  "name": "Cake",
+  "name": "Bolo",
   "description": "https://www.google.com",
   "price": 2.15,
   "available": {
@@ -84,24 +83,24 @@ $(function() {
   }
 }</textarea>
     <p class="options">
-      Options:
-      <label title="Generate node as collapsed">
-        <input type="checkbox" id="collapsed">Collapse nodes
+      Opções:
+      <label title="Gerar nó como colapsado">
+        <input type="checkbox" id="collapsed">Colapsar nós
       </label>
-      <label title="Allow root element to be collasped">
-        <input type="checkbox" id="root-collapsable" checked>Root collapsable
+      <label title="Permitir que o elemento raiz seja colapsado">
+        <input type="checkbox" id="root-collapsable" checked>Elemento raiz colapsável
       </label>
-      <label title="Surround keys with quotes">
-        <input type="checkbox" id="with-quotes">Keys with quotes
+      <label title="Citar chaves">
+        <input type="checkbox" id="with-quotes">Chaves com citações
       </label>
-      <label title="Generate anchor tags for URL values">
+      <label title="Gerar tags de âncora para valores de URL">
         <input type="checkbox" id="with-links" checked>
-        With Links
+        Com Links
       </label>
     </p>
-    <button id="btn-json-viewer" title="run jsonViewer()">Format</button>
+    <button id="btn-json-viewer" title="executar jsonViewer()">Formatar</button>
     <pre id="json-renderer"></pre>
-       <div style="text-align: center;">Copyright © 2023 Json Tool</div>
+       <div style="text-align: center;">Direitos autorais © 2023 Json Tool</div>
 
   </body>
 </html>
